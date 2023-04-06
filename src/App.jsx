@@ -3,11 +3,16 @@ export const App = () => {
     alert("ボタンが押されました");
   };
 
+  const contentStyle = {
+    color: "blue",
+    fontsize: "20px",
+  };
+
   return (
     <>
       {console.log("test")}
-      <h1>Hello,world</h1>
-      <p>test</p>
+      <h1 style={{ color: "red" }}>Hello,world</h1>
+      <p style={contentStyle}>test</p>
       <button onClick={onClickButton}>ボタン</button>
     </>
   );

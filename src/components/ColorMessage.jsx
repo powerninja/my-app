@@ -1,10 +1,11 @@
 export const ColoredMessage = (props) => {
-  console.log(props);
+  const { color, children, fontsize } = props;
   const contentStyle = {
-    color: props.color,
-    fontsize: props.fontsize,
+    //オブジェクトと変数名が同じなので省略可能
+    color,
+    fontsize,
   };
   console.log(contentStyle);
 
-  return <p style={contentStyle}>{props.message}</p>;
+  return <p style={contentStyle}>{children}</p>;
 };

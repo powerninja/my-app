@@ -1,9 +1,9 @@
 import { ColoredMessage } from "./components/ColorMessage";
-import { CssModules } from "./CssModules";
-import { StyledJsx } from "./StyledJsx";
-import { StyledComponents } from "./StyledComponents";
-import { Emotion } from "./Emotion";
-import { TailwindCss } from "./TailwindCss";
+import { CssModules } from "./components/CssModules";
+import { StyledJsx } from "./components/StyledJsx";
+import { StyledComponents } from "./components/StyledComponents";
+import { Emotion } from "./components/Emotion";
+import { TailwindCss } from "./components/TailwindCss";
 import { useState } from "react";
 
 export const App = () => {

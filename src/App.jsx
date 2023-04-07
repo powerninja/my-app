@@ -1,7 +1,9 @@
 import { ColoredMessage } from "./components/ColorMessage";
+import { CssModules } from "./CssModules";
 import { useState } from "react";
 
 export const App = () => {
+  console.log("レンダリング");
   //Stateの定義
   const [num, setNum] = useState(0);
   const onClickButton = () => {
@@ -19,6 +21,8 @@ export const App = () => {
       <ColoredMessage color="pink">元気です</ColoredMessage>
       <button onClick={onClickButton}>ボタン</button>
       <p>{num}</p>
+
+      <CssModules></CssModules>
     </>
   );
 };

@@ -1,5 +1,7 @@
 import { ColoredMessage } from "./components/ColorMessage";
 import { CssModules } from "./CssModules";
+import { Child1 } from "./components/Child1";
+import { Child4 } from "./components/Child4";
 import { useState } from "react";
 
 export const App = () => {
@@ -13,7 +15,6 @@ export const App = () => {
 
   return (
     <>
-      {console.log("test")}
       <h1 style={{ color: "red" }}>Hello,world</h1>
       {/* <ColoredMessage color="blue" message="お元気ですか？" fontsize="60px" /> */}
       <ColoredMessage color="blue">お元気ですか？</ColoredMessage>
@@ -23,6 +24,9 @@ export const App = () => {
       <p>{num}</p>
 
       <CssModules></CssModules>
+
+      <Child1 />
+      <Child4 />
     </>
   );
 };

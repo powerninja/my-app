@@ -1,6 +1,7 @@
 import { ColoredMessage } from "./components/ColorMessage";
 import { CssModules } from "./CssModules";
 import { StyledJsx } from "./StyledJsx";
+import { StyledComponents } from "./StyledComponents";
 import { useState } from "react";
 
 export const App = () => {
@@ -26,6 +27,8 @@ export const App = () => {
       <CssModules></CssModules>
 
       <StyledJsx></StyledJsx>
+
+      <StyledComponents></StyledComponents>
     </>
   );
 };

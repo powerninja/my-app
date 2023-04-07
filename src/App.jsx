@@ -3,6 +3,7 @@ import { CssModules } from "./CssModules";
 import { StyledJsx } from "./StyledJsx";
 import { StyledComponents } from "./StyledComponents";
 import { Emotion } from "./Emotion";
+import { TailwindCss } from "./TailwindCss";
 import { useState } from "react";
 
 export const App = () => {
@@ -32,6 +33,8 @@ export const App = () => {
       <StyledComponents></StyledComponents>
 
       <Emotion></Emotion>
+
+      <TailwindCss></TailwindCss>
     </>
   );
 };

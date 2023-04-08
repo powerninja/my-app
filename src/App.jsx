@@ -2,9 +2,9 @@ import { ColoredMessage } from "./components/ColorMessage";
 import { CssModules } from "./CssModules";
 import { Child1 } from "./components/Child1";
 import { Child4 } from "./components/Child4";
-import { useState } from "react";
+import { memo, useCallback, useState } from "react";
 
-export const App = () => {
+export const App = memo(() => {
   console.log("レンダリング");
   //Stateの定義
   const [num, setNum] = useState(0);
@@ -12,6 +12,10 @@ export const App = () => {
     alert("ボタンが押されました");
     setNum((p) => p + 1);
   };
+
+  const onClickReset = useCallback(() => {
+    setNum(0);
+  }, []);
 
   return (
     <>
@@ -25,8 +29,8 @@ export const App = () => {
 
       <CssModules></CssModules>
 
-      <Child1 />
+      <Child1 onClickReset={onClickReset}></Child1>
       <Child4 />
     </>
   );
-};
+});

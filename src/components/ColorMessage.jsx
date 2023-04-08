@@ -5,7 +5,7 @@ export const ColoredMessage = (props) => {
     color,
     fontsize,
   };
-  console.log(contentStyle);
+  // console.log(contentStyle);
 
   return <p style={contentStyle}>{children}</p>;
 };

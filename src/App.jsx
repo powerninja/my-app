@@ -1,28 +1,22 @@
-import { ColoredMessage } from "./components/ColorMessage";
-import { CssModules } from "./CssModules";
-import { useState } from "react";
+import { useFetchUsers } from "./hooks/useFetchUsers";
 
 export const App = () => {
-  console.log("レンダリング");
-  //Stateの定義
-  const [num, setNum] = useState(0);
-  const onClickButton = () => {
-    alert("ボタンが押されました");
-    setNum((p) => p + 1);
-  };
+  const { userList, onClickFetchUser, isLoading, isError } = useFetchUsers();
 
   return (
-    <>
-      {console.log("test")}
-      <h1 style={{ color: "red" }}>Hello,world</h1>
-      {/* <ColoredMessage color="blue" message="お元気ですか？" fontsize="60px" /> */}
-      <ColoredMessage color="blue">お元気ですか？</ColoredMessage>
-      {/* <ColoredMessage color="pink" message="元気です" fontsize="20px" /> */}
-      <ColoredMessage color="pink">元気です</ColoredMessage>
-      <button onClick={onClickButton}>ボタン</button>
-      <p>{num}</p>
-
-      <CssModules></CssModules>
-    </>
+    <div>
+      <button onClick={onClickFetchUser}>ユーザ取得</button>
+      {console.log(isLoading)} {console.log(isError)}
+      {/* エラーの場合は、エラーメッセージを表示 */}
+      {isError && <p style={{ color: "red" }}>エラーが発生しました</p>}
+      {/* ローディング中は表示を切り替える */}
+      {isLoading ? (
+        <p>データ取得中です</p>
+      ) : (
+        userList.map((user) => (
+          <p key={user.id}>{`${user.id}:${user.name}(${user.age})`}</p>
+        ))
+      )}
+    </div>
   );
 };
